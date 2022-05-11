@@ -59,6 +59,15 @@ public class Main {
             int a = Integer.parseInt(inp[0]);
             char b = inp[1].charAt(0);
             int c = Integer.parseInt(inp[2]);
+            if (a>10 || c >10 || a<1 || c<1) {
+                try {
+                    throw new IOException();
+
+                } catch (IOException e) {
+                    System.out.println("Ошибка: Введите арабские числа от 1 до 10");
+                    System.exit(1);
+                }
+            }
             if (b == 43) {
                 done = String.valueOf(a + c);
             }
