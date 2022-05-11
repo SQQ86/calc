@@ -15,7 +15,7 @@ public class Main {
     }
 
     public static String calc(String input) throws Exception {
-        String[] inp = input.split(" ");
+        String[] inp = input.split(" "); //создаем и заполняем массив из строки
         if(inp.length>3 || inp.length==2) {
             try{
                 throw new IOException();
@@ -37,7 +37,8 @@ public class Main {
         }
         String done = "";
         String done2 = "";
-        String regex = "-?[0-9]+";
+        String regex = "-?[0-9]+"; //регулярное выражение для проверки соответствия "Число ли?", в v 1.02 изменено выражение для поиска отрицательных чисел
+
         if(inp[1].charAt(0)!=43 & inp[1].charAt(0)!=42 & inp[1].charAt(0)!=45 & inp[1].charAt(0)!=47){
             try {
                 throw new IOException();
@@ -45,7 +46,7 @@ public class Main {
             catch (IOException e){
                 System.out.println("throws Exception //т.к. неверно указан оператор");
                 System.exit(1);
-            }
+            } // проверка "Действительно ли третий символ в переданной строке является оператором?"
         }
         if((inp[0].matches(regex)&!inp[2].matches(regex)) || (!inp[0].matches(regex)&inp[2].matches(regex)))
             try {
@@ -79,7 +80,7 @@ public class Main {
             }
             if (b == 47) {
                 done = String.valueOf(a / c);
-            }
+            } //получаем с переменной "с" код символа, и если соответствует - выполняем математическое выражение
             return done;
         }
 
@@ -112,7 +113,7 @@ public class Main {
         }
         for (int i = 1; i < 10; i++) {
             rome[90 + i] = rome[90] + rome[i];
-        }
+        } // заполняем массив римскими цифрами, где индекс соответствует значению римской цифры
         int a = 0, c = 0;
         char b = inp[1].charAt(0);
         for (int i = 1; i <= 100; i++) {
