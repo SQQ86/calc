@@ -37,7 +37,7 @@ public class Main {
         }
         String done = "";
         String done2 = "";
-        String regex = "[0-9]+";
+        String regex = "-?[0-9]+";
         if(inp[1].charAt(0)!=43 & inp[1].charAt(0)!=42 & inp[1].charAt(0)!=45 & inp[1].charAt(0)!=47){
             try {
                 throw new IOException();
